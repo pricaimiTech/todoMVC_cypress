@@ -36,9 +36,13 @@ class  telaInicial{
     }
 
     validarContador(numero){
+        /**
+         * site atualizou e agora não é mais necessário dar um find no elemento
+         */
         cy.get(filtroItem.contador)
-        .find('strong')
-        .should('have.text', numero)
+        // .find('strong')
+        // .should('have.text', numero)
+        .should('contains.text', numero)
     }
 
     validarSizeToDo(numero){
