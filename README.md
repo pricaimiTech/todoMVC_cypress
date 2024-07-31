@@ -53,6 +53,13 @@ yarn run cypress open
 - Deletar Item
 
 
+### Reports
+https://docs.cypress.io/guides/cloud/recorded-runs#Run-Details 
+https://antontelesh.github.io/testing/2019/02/04/mochawesome-merge.html
+https://talkingabouttesting.com/2021/02/14/como-rodar-testes-em-modo-headless-com-cypress/#:~:text=Para%20executar%20os%20testes%20em,cypress%20run%20(veja%20abaixo).
+https://vitormarinheiroautomation.medium.com/aprenda-a-gerar-reports-do-cypress-com-cucumber-4b31b21a46ab
+https://github.com/WasiqB/multiple-cucumber-html-reporter?source=post_page-----4b31b21a46ab--------------------------------
+
 ## Entre em contato 
 
 email: priscila.caimi@hotmail.com
