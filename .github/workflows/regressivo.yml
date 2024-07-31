@@ -1,0 +1,27 @@
+name: Regressivo Crítico
+on: push
+jobs:
+  cypress-chrome-run:
+    runs-on: ubuntu-22.04
+    name: Regressivo Crítico on Chrome
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          headed: true
+          spec: cypress/e2e/aula_03/regressivoToDoApp.cy.js
+  cypress-firefox-run:
+    runs-on: ubuntu-22.04
+    name: Regressivo Crítico on Firefox
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        with:
+          browser: firefox
+          headed: true
+          spec: cypress/e2e/aula_03/regressivoToDoApp.cy.js
