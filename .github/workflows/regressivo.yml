@@ -17,7 +17,7 @@ jobs:
           spec: cypress/e2e/aula_03/regressivoToDoApp.cy.js
           
       # after the test run completes store videos and any screenshots
-      - name: Report
+      - name: report-mochawesome
         uses: actions/upload-artifact@v4
         # add the line below to store screenshots only on failures
         # if: failure()
@@ -25,6 +25,23 @@ jobs:
           name: mochawesome
           path: results/
           if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+      
+      - name: cypress-screenshots
+        uses: actions/upload-artifact@v4
+        # add the line below to store screenshots only on failures
+        # if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+          
+      - name: cypress-videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+
   cypress-firefox-run:
     runs-on: ubuntu-22.04
     name: Regressivo Crítico on Firefox
@@ -35,3 +52,29 @@ jobs:
           browser: firefox
           headed: true
           spec: cypress/e2e/aula_03/regressivoToDoApp.cy.js
+            # after the test run completes store videos and any screenshots
+ # after the test run completes store videos and any screenshots
+      - name: report-mochawesome
+        uses: actions/upload-artifact@v4
+        # add the line below to store screenshots only on failures
+        # if: failure()
+        with:
+          name: mochawesome
+          path: results/
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+      
+      - name: cypress-screenshots
+        uses: actions/upload-artifact@v4
+        # add the line below to store screenshots only on failures
+        # if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+          
+      - name: cypress-videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
